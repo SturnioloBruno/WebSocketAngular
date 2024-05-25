@@ -11,16 +11,18 @@
         </div>
     </div>
     <ul class="messages">
-        <li class="message right">
-            <div class="avatar"></div>
-            <div class="text_wrapper">
-                <div class="text">Hola</div>
-            </div>
-        </li>
+        @for (item of messageList; track item){
+            <li class="message right" [ngClass]="{'left': item.message_side === 'receiver', 'right': item.message_side === 'sender'}">
+                <div class="avatar"></div>
+                <div class="text_wrapper">
+                    <div class="text">{{item.message}}</div>
+                </div>
+            </li>
+        }
     </ul>
     <div class="bottom_wrapper clearfix">
         <div class="message_input_wrapper">
-            <input class="message_input" placeholder="Message..." />
+            <input class="message_input" placeholder="Message..." [(ngModel)]="messageInput"/>
         </div>
         <div class="send_message" (click)="sendMessage()">
             <div class="icon"></div>
