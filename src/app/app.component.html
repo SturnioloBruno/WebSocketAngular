@@ -1,1 +1,10 @@
+<form (ngSubmit)="onSubmit()">
+    <label for="urlBase">URL Base:</label><br>
+    <input type="text" [(ngModel)]="urlBase" name="urlBase"><br>
+    <label for="userId">User ID:</label><br>
+    <input type="text" [(ngModel)]="userId" name="userId"><br>
+    <input type="submit" value="Submit">
+</form>
+
 <router-outlet></router-outlet>
+  
